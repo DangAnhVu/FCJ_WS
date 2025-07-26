@@ -28,13 +28,13 @@ Implement a compliant and automated data archival system using Amazon S3 Glacier
 - Primary storage for objects.
 - Versioning and Object Lock support compliance and legal hold requirements.
 - Uses bucket policies and IAM for access control.
-![Amazon S3](/images/1/AWSS3.png)
+![Amazon S3](AWSS3.png)
 
 #### Amazon S3 Glacier / Glacier Deep Archive
 - Cost-effective long-term storage.
 - Supports Vault Lock for write-once-read-many (WORM) compliance policies.
 - Offers multiple retrieval tiers (expedited, standard, bulk).
-![Amazon S3 Glacier](/images/1/S3%20Glacier.PNG)
+![Amazon S3 Glacier](S3%20Glacier.PNG)
 
 #### S3 Glacier Vault Lock
 - Enforces compliance by locking vault policies after a test period.
@@ -43,18 +43,18 @@ Implement a compliant and automated data archival system using Amazon S3 Glacier
 #### AWS CloudTrail
 - Records all API activities and user actions across AWS resources.
 - Essential for building an audit trail.
-![Amazon CloudTrail](/images/1/AWSCloudTrail.png)
+![Amazon CloudTrail](AWSCloudTrail.png)
 
 #### Amazon CloudWatch
 - Monitors logs and metrics.
 - Generates alerts on unusual behavior and provides dashboard monitoring.
-![AmazonCloudWatch](/images/1/AWSCloudWatch.png)
+![AmazonCloudWatch](AWSCloudWatch.png)
 
 #### AWS EventBridge + SNS
 - EventBridge detects events like deletions or policy changes.
-![Amazon EventBridge](/images/1/S3EventBridge.png)
+![Amazon EventBridge](S3EventBridge.png)
 - SNS sends notifications via email or other monitoring tools.
-![Amazon SNS](/images/1/SNS.png)
+![Amazon SNS](SNS.png)
 
 #### AWS Config (optional)
 - Tracks configuration changes of AWS resources.
