@@ -12,26 +12,26 @@ Create a bucket in Amazon S3 to store the input data, which is where the automat
 2. Select **S3** service
 ![Select S3 Service](S3-Select.PNG)
 1. Select **S3**, click ***Create Bucket***.
-![Select S3 Create Bucket](/images/1/S3-Select-Create-Bucket.PNG)
+![Select S3 Create Bucket](S3-Select-Create-Bucket.PNG)
 1. Enter information for the bucket to be created:
 - Bucket name: `archival-source-bucket-<yourID>` to avoid confusion
 - Object Ownership: leave as **default** (Bucket owner enforce)
 - Block Public Access: keep **default** (**ALL enabled**)
-![Create Bucket](/images/1/Create-Bucket-1.png)
+![Create Bucket](Create-Bucket-1.png)
 - Enable **Versioning**: Tick “**Enable**”
 - Enable **Object Lock**: Tick “**Enable**”
 - Tick: "**I acknowledge that enabling Object Lock will permanently allow objects in this bucket to be locked.**"
 
 
-![Create Bucket](/images/1/Create-Bucket-2.png)
-![Create Bucket](/images/1/Create-Bucket-3.png)
+![Create Bucket](Create-Bucket-2.png)
+![Create Bucket](Create-Bucket-3.png)
 - Select **Create Bucket**
-- ![Create Bucket](/images/1/Create-Bucket-4.png)
+- ![Create Bucket](Create-Bucket-4.png)
 - Try adding an object to the bucket and setting a legal hold for that object
-![Add Object](/images/1/Add-Object-1.png)
-![Add Object](/images/1/Add-Object-2.png)
-![Add Object](/images/1/Add-Object-3.png)
-![Add Object](/images/1/Add-Object-4.png)
+![Add Object](Add-Object-1.png)
+![Add Object](Add-Object-2.png)
+![Add Object](Add-Object-3.png)
+![Add Object](Add-Object-4.png)
 - **Legal hold**: 
   - Keep data for legal reasons (legal case, investigation).
   - No expiration date – keep indefinitely until discarded.
@@ -40,7 +40,7 @@ Create a bucket in Amazon S3 to store the input data, which is where the automat
   - Keep data for a certain period of time.
   - Has a specific term (e.g. 7 years).
   - Cannot be deleted or overwritten until expired.
-![Add Object](/images/1/Add-Object-5.png)
-![Add Object](/images/1/Add-Object-6.png)
-![Add Object](/images/1/Add-Object-7.png)
-![Add Object](/images/1/Add-Object-8.png)
+![Add Object](Add-Object-5.png)
+![Add Object](Add-Object-6.png)
+![Add Object](Add-Object-7.png)
+![Add Object](Add-Object-8.png)

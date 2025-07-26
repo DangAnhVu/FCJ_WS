@@ -10,17 +10,17 @@ pre : " <b> 3. </b> "
 - Ensure the archival process is automated and consistent, serving compliance.
 
 1. Go to AWS Console → S3 → go to the bucket archival-source-bucket.
-![Lifecycle Rule](/images/3/Lifecycle-Rule-1.png)
+![Lifecycle Rule](Lifecycle-Rule-1.png)
 2. Select the **Management** tab, Select Create lifecycle rule.
-![Lifecycle Rule](/public/images/3/Lifecycle-Rule-2.png)
+![Lifecycle Rule](/publicLifecycle-Rule-2.png)
 
 3. Configuration:
 - Lifecycle rule name: `Move-to-Glacier-Rule`
 - Choose a rule scope: **Apply to all objects in the bucket**
 - Apply to all objects in the bucket: Tick on **I acknowledge that this rule will apply to all objects in the bucket.**
 - Lifecycle rule actions: Tick **Transition current versions of objects between storage classes**.
-![Lifecycle Rule](/images/3/Lifecycle-Rule-3.png)
-![Lifecycle Rule](/images/3/Lifecycle-Rule-4.png)
+![Lifecycle Rule](Lifecycle-Rule-3.png)
+![Lifecycle Rule](Lifecycle-Rule-4.png)
 
 4. Create Rule and Review
-![Lifecycle Rule](/images/3/Lifecycle-Rule-5.png)
+![Lifecycle Rule](Lifecycle-Rule-5.png)
