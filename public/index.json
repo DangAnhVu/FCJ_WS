@@ -1,0 +1,71 @@
+[
+{
+	"uri": "//localhost:1313/1-create-the-source-s3-bucket/",
+	"title": "Create the Source S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": "Create the Source S3 Bucket Create a bucket in Amazon S3 to store the input data, which is where the automation process of storing data to Glacier begins.\nGo to the Amazon Web Service homepage page. Select S3 service Select S3, click Create Bucket. Enter information for the bucket to be created: Bucket name: archival-source-bucket-\u0026lt;yourID\u0026gt; to avoid confusion Object Ownership: leave as default (Bucket owner enforce) Block Public Access: keep default (ALL enabled) Enable Versioning: Tick “Enable” Enable Object Lock: Tick “Enable” Tick: \u0026ldquo;I acknowledge that enabling Object Lock will permanently allow objects in this bucket to be locked.\u0026rdquo; Select Create Bucket Try adding an object to the bucket and setting a legal hold for that object Legal hold: Keep data for legal reasons (legal case, investigation). No expiration date – keep indefinitely until discarded. Can manually turn on/off each object. Retention Policy: Keep data for a certain period of time. Has a specific term (e.g. 7 years). Cannot be deleted or overwritten until expired. "
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "Data Archival và Compliance với Glacier và Vault Lock",
+	"tags": [],
+	"description": "",
+	"content": "Data Archival và Compliance với Glacier và Vault Lock Overview Implement a compliant and automated data archival system using Amazon S3 Glacier and Vault Lock to meet legal and regulatory requirements. The system should support:\nCost-effective long-term data storage. Immutable Vault Lock policies to ensure regulatory compliance. Retrieval optimization from S3 Glacier. Generation of audit, cost, and compliance reports. Legal hold mechanisms to preserve data under investigation. Overview of Implementation Steps Design a compliance framework architecture. Create S3 buckets with versioning, Object Lock, and encryption enabled. Define lifecycle policies to automatically transition data to S3 Glacier/Deep Archive. Enable immutable Vault Lock policies to enforce compliance. Configure CloudTrail and CloudWatch for monitoring and auditing. Integrate EventBridge + SNS to notify unusual behaviors. Generate storage cost and retrieval optimization reports. Implement Legal Hold procedures to prevent deletion during investigations. Amazon S3 Primary storage for objects. Versioning and Object Lock support compliance and legal hold requirements. Uses bucket policies and IAM for access control. Amazon S3 Glacier / Glacier Deep Archive Cost-effective long-term storage. Supports Vault Lock for write-once-read-many (WORM) compliance policies. Offers multiple retrieval tiers (expedited, standard, bulk). S3 Glacier Vault Lock Enforces compliance by locking vault policies after a test period. Complies with regulations like SEC Rule 17a-4(f), FINRA, HIPAA, etc. AWS CloudTrail Records all API activities and user actions across AWS resources. Essential for building an audit trail. Amazon CloudWatch Monitors logs and metrics. Generates alerts on unusual behavior and provides dashboard monitoring. AWS EventBridge + SNS EventBridge detects events like deletions or policy changes. SNS sends notifications via email or other monitoring tools. AWS Config (optional) Tracks configuration changes of AWS resources. Evaluates resource compliance over time. AWS Cost Explorer / S3 Storage Lens Analyzes storage and retrieval costs. Identifies opportunities to optimize storage expenses. Customers who choose AWS Support gain one-on-one, fast-response support from AWS engineers. The service helps customers use AWS\u0026rsquo;s products and features. With pay-by-the-month pricing and unlimited support cases, customers are freed from long-term commitments. Customers with operational issues or technical questions can contact a team of support engineers and receive predictable response times and personalized support.\nMain Content Create the Source S3 Bucket Create Glacier Vault and configure Vault Lock Policy Set up S3 Lifecycle Policy – Automatically move data from S3 to Glaciers Implement Monitoring, Auditing and Compliance Reporting Testing The Waning System Set Up Compliance Reporting And Audit Process Clean Up Resources "
+},
+{
+	"uri": "//localhost:1313/2-create-s3-glacier-vault/",
+	"title": "Create Glacier Vault and configure Vault Lock Policy",
+	"tags": [],
+	"description": "",
+	"content": "Objective of this section Create a Glacier Vault for long-term, low-cost data storage. Apply Vault Lock Policy to ensure data is stored in a Write Once Read Many (WORM) model. The Vault Lock Policy cannot be modified or deleted after “Lock Complete”, meeting strict compliance controls. Create Glacier Vault Select S3 Glacier Select Create vault Configuration: Vault name: compliance-archive-vault Event notifications: Default is Turn off notifications Deploy Vault Lock Policy (very important) In the Vault list, select compliance-archive-vault. Switch to the Vault policies tab. Click Initiate Vault Lock. Create a Vault Lock policy as follows: { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Sid\u0026#34;: \u0026#34;PreventDeletion\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Deny\u0026#34;, \u0026#34;Principal\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;glacier:DeleteArchive\u0026#34;, \u0026#34;glacier:DeleteVault\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;\u0026lt;Your Vault ARN\u0026gt;\u0026#34; } ] } This policy blocks any archive deletion or vault deletion.\nCopy the Lock ID on the screen, then select Close Click Complete Vault Lock policy, tick on \u0026ldquo;I acknowledge that completing the Vault Lock is irreversible.\u0026rdquo;, enter the copied Lock ID, select Complete Vault Lock. "
+},
+{
+	"uri": "//localhost:1313/3-set-up-vault-lock-policy/",
+	"title": "Set up S3 Lifecycle Policy – Automatically move data from S3 to Glaciers",
+	"tags": [],
+	"description": "",
+	"content": "Objective Set up a policy to automatically move data from the source S3 Bucket (you created in Step 1) to S3 Glacier for long-term storage. Ensure the archival process is automated and consistent, serving compliance. Go to AWS Console → S3 → go to the bucket archival-source-bucket. Select the Management tab, Select Create lifecycle rule. Configuration:\nLifecycle rule name: Move-to-Glacier-Rule Choose a rule scope: Apply to all objects in the bucket Apply to all objects in the bucket: Tick on I acknowledge that this rule will apply to all objects in the bucket. Lifecycle rule actions: Tick Transition current versions of objects between storage classes. Create Rule and Review "
+},
+{
+	"uri": "//localhost:1313/4--implement-monitoring-auditing-and-compliance-reporting/",
+	"title": "Implement Monitoring, Auditing and Compliance Reporting",
+	"tags": [],
+	"description": "",
+	"content": "Implement Monitoring, Auditing and Compliance Reporting Enable AWS CloudTrail Search AWS CloudTrail on AWS Console, Select CloudTrail Select Trails, select Create Trail Configuration: Trail name: Trail name Storage location: Create new S3 bucket Log file SSE-KMS encryption: Enable Customer managed AWS KMS key: New, AWS KMS alias: archival-compliance-trail-key Log file validation: Enable CloudWatch Logs - optional CloudWatch Logs: Enable Log group: New, Log group name: aws-cloudtrail-logs-ws-\u0026lt; YourID \u0026gt;-1613c3f0 Select Next Choose log events Events: tick on Management events, Data events Management events: tick on Read, Write Select Next Review and Create trail Configure AWS CloudWatch Monitoring Create Metric Filter Search AWS CloudWatch on AWS Console, Select CloudWatch Select the log group containing the CloudTrail logs just created. Create Metric Filter Configuration for DeleteObject: Filter pattern: { $.eventName = \u0026quot;DeleteObject\u0026quot; } Select Next Assign metric Filter name: DeleteObjectEventMetricFilter Metric namespace: S3/DeleteObjectMonitoring Metric name: DeleteObjectEventCount Metric value: 1 Default value: blank Unit: Count Select Next Review and Create Do the same with DeleteBucket Do the same with RestoreObject Create CloudWatch Alarm Create Cloud Alarm for event DeleteObject Select that metric filter Specify metric and conditions Threshold type: Static Whenever DeleteObjectEventCount is\u0026hellip;: Greater than: 1 Select Next Configure actions: Alarm state trigger: In Alarm Send a notification to the following SNS topic: Create new topic Topic name: S3_DeleteObject_Alarm_Topic Email endpoint: \u0026lt; Your email \u0026gt; Create Topic and Confirm your email via gmail Select Next Add alarm details: Alarm name: S3-DeleteObject-Alarm Alarm description: # Track object deletion events on S3 Select Next Review and Create: Create Cloud Alarm for event DeleteBucket Create Cloud Alarm for event RestoreObject "
+},
+{
+	"uri": "//localhost:1313/5-testing-the-warning-system/",
+	"title": "Testing The Waning System",
+	"tags": [],
+	"description": "",
+	"content": " Test DeleteObject warning First you open the created bucket to save data. We upload any file to that bucket. Then enable versioning of the object, select the newly added object, select delete. See alarm DeleteBucket on CloudTrail and CloudWatch console Email alarm Test DeleteBucket warning First you create bucket with name test-delete-\u0026lt; Your-ID \u0026gt; You delete that bucket See alarm DeleteBucket on CloudTrail and CloudWatch console "
+},
+{
+	"uri": "//localhost:1313/6-set-up-compliance-reporting-and-audit-process/",
+	"title": "Set Up Compliance Reporting And Audit Process",
+	"tags": [],
+	"description": "",
+	"content": "Query CloudTrail Logs with CloudWatch Logs Insights Purpose: Filter DeleteObject, DeleteBucket, RestoreObject events for testing.\nSet up Compliance Reporting Purpose: Periodically export reports on deletion and recovery actions on the S3 system.\nGo to CloudWatch \u0026gt; Logs Insights. Select the log group containing CloudTrail logs Paste the following query: fields @timestamp, eventName, userIdentity.userName, requestParameters.bucketName, sourceIPAddress\r| filter eventSource = \u0026#34;s3.amazonaws.com\u0026#34;\rand eventName in [\u0026#34;DeleteObject\u0026#34;, \u0026#34;DeleteBucket\u0026#34;, \u0026#34;RestoreObject\u0026#34;]\r| sort @timestamp desc\r| limit 50 Click Run query. Result: Displays the most recent DeleteObject, DeleteBucket, RestoreObject actions. Audit Procedures After running the Logs Insights query:\nClick Export results \u0026gt; Download CSV. Save as file and open it by Excel. Cost Analysis Select Cost Explorer Filter: You can filter by attributes Date Range Granularity Dimension Service Linked account Region \u0026hellip; Export results (CSV or PDF) to include in reports. "
+},
+{
+	"uri": "//localhost:1313/7-clean-resource/",
+	"title": "Clean Up Resources",
+	"tags": [],
+	"description": "",
+	"content": " "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
