@@ -12,21 +12,21 @@
     <title>Set Up Compliance Reporting And Audit Process :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1753523366" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753523366" rel="stylesheet">
-    <link href="/css/hybrid.css?1753523366" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753523366" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753523366" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753523366" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753523366" rel="stylesheet">
-    <link href="/css/theme.css?1753523366" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753523366" rel="stylesheet">
+    <link href="/css/nucleus.css?1753546403" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753546403" rel="stylesheet">
+    <link href="/css/hybrid.css?1753546403" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753546403" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753546403" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753546403" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753546403" rel="stylesheet">
+    <link href="/css/theme.css?1753546403" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753546403" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753523366" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753546403" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753523366"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753546403"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753523366"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753523366"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753546403"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753546403"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753523366"></script>
+<script type="text/javascript" src="/js/search.js?1753546403"></script>
 
     
   </div>
@@ -435,10 +435,10 @@
 <p>Purpose: Periodically export reports on deletion and recovery actions on the S3 system.</p>
 <ol>
 <li>Go to CloudWatch &gt; Logs Insights.
-<img alt="CloudWatch logs" src="/images/6/1.png">
-<img alt="CloudWatch logs" src="/images/6/2.png"></li>
+<img alt="CloudWatch logs" src="/6-set-up-compliance-reporting-and-audit-process/1.png">
+<img alt="CloudWatch logs" src="/6-set-up-compliance-reporting-and-audit-process/2.png"></li>
 <li>Select the log group containing CloudTrail logs
-<img alt="CloudWatch logs" src="/images/6/3.png"></li>
+<img alt="CloudWatch logs" src="/6-set-up-compliance-reporting-and-audit-process/3.png"></li>
 <li>Paste the following query:</li>
 </ol>
 <pre tabindex="0"><code>fields @timestamp, eventName, userIdentity.userName, requestParameters.bucketName, sourceIPAddress
@@ -448,23 +448,23 @@
 | limit 50
 </code></pre><ol>
 <li>Click <strong>Run query</strong>.
-<img alt="CloudWatch logs" src="/images/6/4.png">
-<img alt="CloudWatch logs" src="/images/6/5.png">
+<img alt="CloudWatch logs" src="/6-set-up-compliance-reporting-and-audit-process/4.png">
+<img alt="CloudWatch logs" src="/6-set-up-compliance-reporting-and-audit-process/5.png">
 <strong>Result: Displays the most recent DeleteObject, DeleteBucket, RestoreObject actions.</strong></li>
 </ol>
 <h3 id="audit-procedures">Audit Procedures</h3>
 <p>After running the Logs Insights query:</p>
 <ol>
 <li>Click Export results &gt; Download CSV.
-<img alt="CloudWatch logs" src="/images/6/6.png"></li>
+<img alt="CloudWatch logs" src="/6-set-up-compliance-reporting-and-audit-process/6.png"></li>
 <li>Save as file and open it by Excel.
-<img alt="CloudWatch logs" src="/images/6/7.png"></li>
+<img alt="CloudWatch logs" src="/6-set-up-compliance-reporting-and-audit-process/7.png"></li>
 </ol>
 <h3 id="cost-analysis">Cost Analysis</h3>
 <ol>
 <li>Select <strong>Cost Explorer</strong>
-<img alt="Cost Analysis" src="/images/6/Cost-Explorer-1.png">
-<img alt="Cost Analysis" src="/images/6/Cost-Explorer-2.png"></li>
+<img alt="Cost Analysis" src="/6-set-up-compliance-reporting-and-audit-process/Cost-Explorer-1.png">
+<img alt="Cost Analysis" src="/6-set-up-compliance-reporting-and-audit-process/Cost-Explorer-2.png"></li>
 <li>Filter: You can filter by attributes</li>
 </ol>
 <ul>
@@ -475,11 +475,11 @@
 <li>Linked account</li>
 <li>Region</li>
 <li>&hellip;
-<img alt="Cost Analysis" src="/images/6/Cost-Explorer-3.png"></li>
+<img alt="Cost Analysis" src="/6-set-up-compliance-reporting-and-audit-process/Cost-Explorer-3.png"></li>
 </ul>
 <ol start="3">
 <li>Export results (CSV or PDF) to include in reports.
-<img alt="Cost Analysis" src="/images/6/Cost-Explorer-4.png"></li>
+<img alt="Cost Analysis" src="/6-set-up-compliance-reporting-and-audit-process/Cost-Explorer-4.png"></li>
 </ol>
 
 
@@ -657,19 +657,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753523366"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753523366"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753523366"></script>
-    <script src="/js/jquery.sticky.js?1753523366"></script>
-    <script src="/js/featherlight.min.js?1753523366"></script>
-    <script src="/js/highlight.pack.js?1753523366"></script>
+    <script src="/js/clipboard.min.js?1753546403"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753546403"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753546403"></script>
+    <script src="/js/jquery.sticky.js?1753546403"></script>
+    <script src="/js/featherlight.min.js?1753546403"></script>
+    <script src="/js/highlight.pack.js?1753546403"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753523366"></script>
-    <script src="/js/learn.js?1753523366"></script>
-    <script src="/js/hugo-learn.js?1753523366"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753546403"></script>
+    <script src="/js/learn.js?1753546403"></script>
+    <script src="/js/hugo-learn.js?1753546403"></script>
 
-    <link href="/mermaid/mermaid.css?1753523366" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753523366"></script>
+    <link href="/mermaid/mermaid.css?1753546403" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753546403"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

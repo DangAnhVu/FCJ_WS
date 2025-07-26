@@ -12,21 +12,21 @@
     <title>Create the Source S3 Bucket :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1753524478" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753524478" rel="stylesheet">
-    <link href="/css/hybrid.css?1753524478" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753524478" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753524478" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753524478" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753524478" rel="stylesheet">
-    <link href="/css/theme.css?1753524478" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753524478" rel="stylesheet">
+    <link href="/css/nucleus.css?1753546403" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753546403" rel="stylesheet">
+    <link href="/css/hybrid.css?1753546403" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753546403" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753546403" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753546403" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753546403" rel="stylesheet">
+    <link href="/css/theme.css?1753546403" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753546403" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753524478" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753546403" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753524478"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753546403"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753524478"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753524478"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753546403"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753546403"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753524478"></script>
+<script type="text/javascript" src="/js/search.js?1753546403"></script>
 
     
   </div>
@@ -433,28 +433,28 @@
 <li>Select <strong>S3</strong> service
 <img alt="Select S3 Service" src="/1-create-the-source-s3-bucket/S3-Select.PNG"></li>
 <li>Select <strong>S3</strong>, click <em><strong>Create Bucket</strong></em>.
-<img alt="Select S3 Create Bucket" src="/images/1/S3-Select-Create-Bucket.PNG"></li>
+<img alt="Select S3 Create Bucket" src="/1-create-the-source-s3-bucket/S3-Select-Create-Bucket.PNG"></li>
 <li>Enter information for the bucket to be created:</li>
 </ol>
 <ul>
 <li>Bucket name: <code>archival-source-bucket-&lt;yourID&gt;</code> to avoid confusion</li>
 <li>Object Ownership: leave as <strong>default</strong> (Bucket owner enforce)</li>
 <li>Block Public Access: keep <strong>default</strong> (<strong>ALL enabled</strong>)
-<img alt="Create Bucket" src="/images/1/Create-Bucket-1.png"></li>
+<img alt="Create Bucket" src="/1-create-the-source-s3-bucket/Create-Bucket-1.PNG"></li>
 <li>Enable <strong>Versioning</strong>: Tick “<strong>Enable</strong>”</li>
 <li>Enable <strong>Object Lock</strong>: Tick “<strong>Enable</strong>”</li>
 <li>Tick: &ldquo;<strong>I acknowledge that enabling Object Lock will permanently allow objects in this bucket to be locked.</strong>&rdquo;</li>
 </ul>
-<p><img alt="Create Bucket" src="/images/1/Create-Bucket-2.png">
-<img alt="Create Bucket" src="/images/1/Create-Bucket-3.png"></p>
+<p><img alt="Create Bucket" src="/1-create-the-source-s3-bucket/Create-Bucket-2.PNG">
+<img alt="Create Bucket" src="/1-create-the-source-s3-bucket/Create-Bucket-3.PNG"></p>
 <ul>
 <li>Select <strong>Create Bucket</strong></li>
-<li><img alt="Create Bucket" src="/images/1/Create-Bucket-4.png"></li>
+<li><img alt="Create Bucket" src="/1-create-the-source-s3-bucket/Create-Bucket-4.PNG"></li>
 <li>Try adding an object to the bucket and setting a legal hold for that object
-<img alt="Add Object" src="/images/1/Add-Object-1.png">
-<img alt="Add Object" src="/images/1/Add-Object-2.png">
-<img alt="Add Object" src="/images/1/Add-Object-3.png">
-<img alt="Add Object" src="/images/1/Add-Object-4.png"></li>
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-1.png">
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-2.png">
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-3.png">
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-4.png"></li>
 <li><strong>Legal hold</strong>:
 <ul>
 <li>Keep data for legal reasons (legal case, investigation).</li>
@@ -467,10 +467,14 @@
 <li>Keep data for a certain period of time.</li>
 <li>Has a specific term (e.g. 7 years).</li>
 <li>Cannot be deleted or overwritten until expired.
-<img alt="Add Object" src="/images/1/Add-Object-5.png">
-<img alt="Add Object" src="/images/1/Add-Object-6.png">
-<img alt="Add Object" src="/images/1/Add-Object-7.png">
-<img alt="Add Object" src="/images/1/Add-Object-8.png"></li>
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-5.png">
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-6.png">
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-7.png">
+<img alt="Add Object" src="/1-create-the-source-s3-bucket/Add-Object-8.png">
+
+<div class="notices info" ><p>We can see that it is not possible to delete an object that has a legal hold set.</p>
+</div>
+</li>
 </ul>
 </li>
 </ul>
@@ -647,19 +651,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753524478"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753524478"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753524478"></script>
-    <script src="/js/jquery.sticky.js?1753524478"></script>
-    <script src="/js/featherlight.min.js?1753524478"></script>
-    <script src="/js/highlight.pack.js?1753524478"></script>
+    <script src="/js/clipboard.min.js?1753546403"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753546403"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753546403"></script>
+    <script src="/js/jquery.sticky.js?1753546403"></script>
+    <script src="/js/featherlight.min.js?1753546403"></script>
+    <script src="/js/highlight.pack.js?1753546403"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753524478"></script>
-    <script src="/js/learn.js?1753524478"></script>
-    <script src="/js/hugo-learn.js?1753524478"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753546403"></script>
+    <script src="/js/learn.js?1753546403"></script>
+    <script src="/js/hugo-learn.js?1753546403"></script>
 
-    <link href="/mermaid/mermaid.css?1753524478" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753524478"></script>
+    <link href="/mermaid/mermaid.css?1753546403" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753546403"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

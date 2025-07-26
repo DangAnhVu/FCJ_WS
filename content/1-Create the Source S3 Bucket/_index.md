@@ -44,3 +44,6 @@ Create a bucket in Amazon S3 to store the input data, which is where the automat
 ![Add Object](Add-Object-6.png)
 ![Add Object](Add-Object-7.png)
 ![Add Object](Add-Object-8.png)
+{{% notice info %}}
+We can see that it is not possible to delete an object that has a legal hold set.
+{{% /notice %}}

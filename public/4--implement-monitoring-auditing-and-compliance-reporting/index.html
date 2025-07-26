@@ -12,21 +12,21 @@
     <title>Implement Monitoring, Auditing and Compliance Reporting :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1753523367" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753523367" rel="stylesheet">
-    <link href="/css/hybrid.css?1753523367" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753523367" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753523367" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753523367" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753523367" rel="stylesheet">
-    <link href="/css/theme.css?1753523367" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753523367" rel="stylesheet">
+    <link href="/css/nucleus.css?1753544564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753544564" rel="stylesheet">
+    <link href="/css/hybrid.css?1753544564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753544564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753544564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753544564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753544564" rel="stylesheet">
+    <link href="/css/theme.css?1753544564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753544564" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753523367" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753544564" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753523367"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753544564"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753523367"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753523367"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753544564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753544564"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753523367"></script>
+<script type="text/javascript" src="/js/search.js?1753544564"></script>
 
     
   </div>
@@ -430,9 +430,9 @@
 <h4 id="enable-aws-cloudtrail">Enable AWS CloudTrail</h4>
 <ol>
 <li>Search <strong>AWS CloudTrail</strong> on AWS Console, Select <strong>CloudTrail</strong>
-<img alt="CloudTrail" src="/images/4//CloudTrail-1.png"></li>
+<img alt="CloudTrail" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudTrail-1.png"></li>
 <li>Select Trails, select <strong>Create Trail</strong>
-<img alt="CloudTrail" src="/images/4//CloudTrail-2.png"></li>
+<img alt="CloudTrail" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudTrail-2.png"></li>
 <li>Configuration:</li>
 </ol>
 <ul>
@@ -445,8 +445,8 @@
 <ul>
 <li>CloudWatch Logs: <strong>Enable</strong></li>
 <li>Log group: <strong>New</strong>, Log group name: <code>aws-cloudtrail-logs-ws-&lt; YourID &gt;-1613c3f0</code>
-<img alt="CloudTrail" src="/images/4//CloudTrail-3.png">
-<img alt="CloudTrail" src="/images/4//CloudTrail-4.png"></li>
+<img alt="CloudTrail" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudTrail-3.png">
+<img alt="CloudTrail" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudTrail-4.png"></li>
 </ul>
 </li>
 <li>Select <strong>Next</strong></li>
@@ -454,28 +454,28 @@
 <ul>
 <li>Events: tick on <strong>Management events</strong>, <strong>Data events</strong></li>
 <li>Management events: tick on <strong>Read</strong>, <strong>Write</strong>
-<img alt="CloudTrail" src="/images/4//CloudTrail-5.png">
-<img alt="CloudTrail" src="/images/4//CloudTrail-6.png"></li>
+<img alt="CloudTrail" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudTrail-5.png">
+<img alt="CloudTrail" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudTrail-6.png"></li>
 </ul>
 </li>
 <li>Select <strong>Next</strong></li>
 <li>Review and <strong>Create trail</strong>
-<img alt="CloudTrail" src="/images/4//CloudTrail-7.png"></li>
+<img alt="CloudTrail" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudTrail-7.png"></li>
 </ul>
 <h4 id="configure-aws-cloudwatch-monitoring">Configure AWS CloudWatch Monitoring</h4>
 <h5 id="create-metric-filter">Create Metric Filter</h5>
 <ol>
 <li>Search <strong>AWS CloudWatch</strong> on AWS Console, Select <strong>CloudWatch</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-1.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-1.png"></li>
 <li>Select the log group containing the CloudTrail logs just created.
-<img alt="CloudWatch" src="/images/4//CloudWatch-2.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-2.png"></li>
 <li><strong>Create Metric Filter</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-3.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-3.png"></li>
 <li>Configuration for DeleteObject:</li>
 </ol>
 <ul>
 <li>Filter pattern: <code>{ $.eventName = &quot;DeleteObject&quot; }</code>
-<img alt="CloudWatch" src="/images/4//CloudWatch-4.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-4.png"></li>
 <li>Select <strong>Next</strong></li>
 <li><strong>Assign metric</strong>
 <ul>
@@ -485,28 +485,28 @@
 <li>Metric value: <code>1</code></li>
 <li>Default value: blank</li>
 <li>Unit: <strong>Count</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-5.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-6.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-5.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-6.png"></li>
 </ul>
 </li>
 <li>Select <strong>Next</strong></li>
 <li>Review and Create
-<img alt="CloudWatch" src="/images/4//CloudWatch-7.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-8.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-7.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-8.png"></li>
 </ul>
 <ol>
 <li>Do the same with <strong>DeleteBucket</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-19.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-20.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-21.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-22.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-23.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-19.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-20.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-21.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-22.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-23.png"></li>
 <li>Do the same with <strong>RestoreObject</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-24.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-25.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-26.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-27.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-28.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-24.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-25.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-26.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-27.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-28.png"></li>
 </ol>
 <h5 id="create-cloudwatch-alarm">Create CloudWatch Alarm</h5>
 <ol>
@@ -514,24 +514,24 @@
 </ol>
 <ul>
 <li>Select that metric filter
-<img alt="CloudWatch" src="/images/4//CloudWatch-9.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-9.png"></li>
 <li>Specify metric and conditions</li>
 <li>Threshold type: <strong>Static</strong></li>
 <li>Whenever DeleteObjectEventCount is&hellip;: <strong>Greater</strong></li>
 <li>than: <strong>1</strong></li>
 <li>Select <strong>Next</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-10.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-11.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-10.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-11.png"></li>
 <li>Configure actions:</li>
 <li>Alarm state trigger: <strong>In Alarm</strong></li>
 <li>Send a notification to the following SNS topic: <strong>Create new topic</strong>
 <ul>
 <li>Topic name: <code>S3_DeleteObject_Alarm_Topic</code></li>
 <li>Email endpoint: <code>&lt; Your email &gt;</code>
-<img alt="CloudWatch" src="/images/4//CloudWatch-12.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-12.png"></li>
 <li><strong>Create Topic</strong> and Confirm your email via gmail
-<img alt="CloudWatch" src="/images/4//CloudWatch-13.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-14.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-13.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-14.png"></li>
 <li>Select <strong>Next</strong></li>
 </ul>
 </li>
@@ -540,32 +540,32 @@
 <li>Alarm name: <code>S3-DeleteObject-Alarm</code></li>
 <li>Alarm description: <code># Track object deletion events on S3</code></li>
 <li>Select <strong>Next</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-15.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-15.png"></li>
 </ul>
 </li>
 <li>Review and Create:
-<img alt="CloudWatch" src="/images/4//CloudWatch-16.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-17.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-18.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-16.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-17.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-18.png"></li>
 </ul>
 <ol start="2">
 <li>Create Cloud Alarm for event <strong>DeleteBucket</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-29.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-30.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-31.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-32.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-33.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-34.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-35.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-36.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-29.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-30.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-31.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-32.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-33.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-34.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-35.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-36.png"></li>
 <li>Create Cloud Alarm for event <strong>RestoreObject</strong>
-<img alt="CloudWatch" src="/images/4//CloudWatch-37.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-38.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-39.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-40.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-41.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-42.png">
-<img alt="CloudWatch" src="/images/4//CloudWatch-43.png"></li>
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-37.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-38.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-39.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-40.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-41.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-42.png">
+<img alt="CloudWatch" src="/4--implement-monitoring-auditing-and-compliance-reporting/CloudWatch-43.png"></li>
 </ol>
 
 
@@ -743,19 +743,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753523367"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753523367"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753523367"></script>
-    <script src="/js/jquery.sticky.js?1753523367"></script>
-    <script src="/js/featherlight.min.js?1753523367"></script>
-    <script src="/js/highlight.pack.js?1753523367"></script>
+    <script src="/js/clipboard.min.js?1753544564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753544564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753544564"></script>
+    <script src="/js/jquery.sticky.js?1753544564"></script>
+    <script src="/js/featherlight.min.js?1753544564"></script>
+    <script src="/js/highlight.pack.js?1753544564"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753523367"></script>
-    <script src="/js/learn.js?1753523367"></script>
-    <script src="/js/hugo-learn.js?1753523367"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753544564"></script>
+    <script src="/js/learn.js?1753544564"></script>
+    <script src="/js/hugo-learn.js?1753544564"></script>
 
-    <link href="/mermaid/mermaid.css?1753523367" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753523367"></script>
+    <link href="/mermaid/mermaid.css?1753544564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753544564"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

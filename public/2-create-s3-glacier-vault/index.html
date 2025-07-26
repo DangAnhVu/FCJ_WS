@@ -12,21 +12,21 @@
     <title>Create Glacier Vault and configure Vault Lock Policy :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1753524478" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753524478" rel="stylesheet">
-    <link href="/css/hybrid.css?1753524478" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753524478" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753524478" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753524478" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753524478" rel="stylesheet">
-    <link href="/css/theme.css?1753524478" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753524478" rel="stylesheet">
+    <link href="/css/nucleus.css?1753544564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753544564" rel="stylesheet">
+    <link href="/css/hybrid.css?1753544564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753544564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753544564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753544564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753544564" rel="stylesheet">
+    <link href="/css/theme.css?1753544564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753544564" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753524478" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753544564" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753524478"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753544564"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753524478"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753524478"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753544564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753544564"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753524478"></script>
+<script type="text/javascript" src="/js/search.js?1753544564"></script>
 
     
   </div>
@@ -435,22 +435,22 @@
 <h4 id="create-glacier-vault">Create Glacier Vault</h4>
 <ol>
 <li>Select <em><strong>S3 Glacier</strong></em>
-<img alt="S3 Glacier" src="/images/2/Select-S3-Glacier.png"></li>
+<img alt="S3 Glacier" src="/2-create-s3-glacier-vault/Select-S3-Glacier.PNG"></li>
 <li>Select <em><strong>Create vault</strong></em>
-<img alt="S3 Glacier" src="/images/2/Create-Vault.png"></li>
+<img alt="S3 Glacier" src="/2-create-s3-glacier-vault/Create-Vault.PNG"></li>
 <li>Configuration:</li>
 </ol>
 <ul>
 <li>Vault name: <code>compliance-archive-vault</code></li>
 <li>Event notifications: Default is <strong>Turn off notifications</strong>
-<img alt="S3 Glacier" src="/images/2/Create-Vault-1.png"></li>
+<img alt="S3 Glacier" src="Create-Vault-1.png"></li>
 </ul>
 <h4 id="deploy-vault-lock-policy-very-important">Deploy Vault Lock Policy (very important)</h4>
 <ol>
 <li>In the Vault list, select <code>compliance-archive-vault</code>.
-<img alt="Create Vault Policy" src="/images/2/Vault-Policy.png"></li>
+<img alt="Create Vault Policy" src="/2-create-s3-glacier-vault/Vault-Policy.png"></li>
 <li>Switch to the <strong>Vault policies</strong> tab.
-<img alt="Create Vault Policy" src="/images/2/Vault-Policy-1.png"></li>
+<img alt="Create Vault Policy" src="/2-create-s3-glacier-vault/Vault-Policy-1.PNG"></li>
 <li>Click <strong>Initiate Vault Lock</strong>.</li>
 <li>Create a Vault Lock policy as follows:</li>
 </ol>
@@ -473,13 +473,13 @@
 <ol>
 <li>
 <p>Copy the Lock ID on the screen, then select Close
-<img alt="Create Vault Policy" src="/images/2/Vault-Policy-2.png"></p>
+<img alt="Create Vault Policy" src="/2-create-s3-glacier-vault/Vault-Policy-2.PNG"></p>
 </li>
 <li>
 <p>Click <strong>Complete Vault Lock policy</strong>, tick on &ldquo;<strong>I acknowledge that completing the Vault Lock is irreversible.</strong>&rdquo;, enter the copied <strong>Lock ID</strong>, select <strong>Complete Vault Lock</strong>.
-<img alt="Create Vault Policy" src="/images/2/Vault-Policy-3.png">
-<img alt="Create Vault Policy" src="/images/2/Vault-Policy-4.png">
-<img alt="Create Vault Policy" src="/images/2/Vault-Policy-5.png"></p>
+<img alt="Create Vault Policy" src="/2-create-s3-glacier-vault/Vault-Policy-3.PNG">
+<img alt="Create Vault Policy" src="/2-create-s3-glacier-vault/Vault-Policy-4.png">
+<img alt="Create Vault Policy" src="/2-create-s3-glacier-vault/Vault-Policy-5.png"></p>
 </li>
 </ol>
 
@@ -658,19 +658,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753524478"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753524478"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753524478"></script>
-    <script src="/js/jquery.sticky.js?1753524478"></script>
-    <script src="/js/featherlight.min.js?1753524478"></script>
-    <script src="/js/highlight.pack.js?1753524478"></script>
+    <script src="/js/clipboard.min.js?1753544564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753544564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753544564"></script>
+    <script src="/js/jquery.sticky.js?1753544564"></script>
+    <script src="/js/featherlight.min.js?1753544564"></script>
+    <script src="/js/highlight.pack.js?1753544564"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753524478"></script>
-    <script src="/js/learn.js?1753524478"></script>
-    <script src="/js/hugo-learn.js?1753524478"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753544564"></script>
+    <script src="/js/learn.js?1753544564"></script>
+    <script src="/js/hugo-learn.js?1753544564"></script>
 
-    <link href="/mermaid/mermaid.css?1753524478" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753524478"></script>
+    <link href="/mermaid/mermaid.css?1753544564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753544564"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
