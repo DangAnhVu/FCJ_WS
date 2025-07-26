@@ -22,12 +22,12 @@ pre : " <b> 2. </b> "
 ![S3 Glacier](Create-Vault-1.png)
 
 #### Deploy Vault Lock Policy (very important)
-1. In the Vault list, select `compliance-archive-vault`.
+3. In the Vault list, select `compliance-archive-vault`.
 ![Create Vault Policy](Vault-Policy.png)
-1. Switch to the **Vault policies** tab.
+4. Switch to the **Vault policies** tab.
 ![Create Vault Policy](Vault-Policy-1.png)
-1. Click **Initiate Vault Lock**.
-2. Create a Vault Lock policy as follows:
+5. Click **Initiate Vault Lock**.
+6. Create a Vault Lock policy as follows:
 ```
 {
   "Version": "2012-10-17",
@@ -47,11 +47,16 @@ pre : " <b> 2. </b> "
 ```
 This policy blocks any archive deletion or vault deletion.
 
-1. Copy the Lock ID on the screen, then select Close
+7. Copy the Lock ID on the screen, then select Close
 ![Create Vault Policy](Vault-Policy-2.png)
 
 
-1. Click **Complete Vault Lock policy**, tick on "**I acknowledge that completing the Vault Lock is irreversible.**", enter the copied **Lock ID**, select **Complete Vault Lock**.
+8. Click **Complete Vault Lock policy**, tick on "**I acknowledge that completing the Vault Lock is irreversible.**", enter the copied **Lock ID**, select **Complete Vault Lock**.
 ![Create Vault Policy](Vault-Policy-3.png)
 ![Create Vault Policy](Vault-Policy-4.png)
 ![Create Vault Policy](Vault-Policy-5.png)
+
+{{% notice info%}}
+Once Complete Vault Lock is confirmed, the policy is immutable.
+This ensures regulatory data retention and deletion prevention, essential for compliance audits.
+{{% /notice %}}

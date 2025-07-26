@@ -21,8 +21,11 @@ Create a bucket in Amazon S3 to store the input data, which is where the automat
 - Enable **Versioning**: Tick “**Enable**”
 - Enable **Object Lock**: Tick “**Enable**”
 - Tick: "**I acknowledge that enabling Object Lock will permanently allow objects in this bucket to be locked.**"
-
-
+{{% notice info %}}
+Object Lock **must be enabled at bucket creation**. You cannot enable it afterward.
+Enabling Object Lock allows placing objects in: **Compliance Mode**: Immutable for a set retention period, even by admins, **Legal Hold**: Prevents deletion for legal/investigative reasons.
+Object Lock supports **WORM (Write Once, Read Many)** storage for strict audit compliance.
+{{% /notice %}}
 ![Create Bucket](Create-Bucket-2.png)
 ![Create Bucket](Create-Bucket-3.png)
 - Select **Create Bucket**

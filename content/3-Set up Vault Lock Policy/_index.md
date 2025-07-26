@@ -12,9 +12,9 @@ pre : " <b> 3. </b> "
 1. Go to AWS Console → S3 → go to the bucket archival-source-bucket.
 ![Lifecycle Rule](Lifecycle-Rule-1.png)
 2. Select the **Management** tab, Select Create lifecycle rule.
-![Lifecycle Rule](/publicLifecycle-Rule-2.png)
+![Lifecycle Rule](Lifecycle-Rule-2.png)
 
-3. Configuration:
+1. Configuration:
 - Lifecycle rule name: `Move-to-Glacier-Rule`
 - Choose a rule scope: **Apply to all objects in the bucket**
 - Apply to all objects in the bucket: Tick on **I acknowledge that this rule will apply to all objects in the bucket.**
@@ -24,3 +24,9 @@ pre : " <b> 3. </b> "
 
 4. Create Rule and Review
 ![Lifecycle Rule](Lifecycle-Rule-5.png)
+
+{{% notice info%}}
+This policy automates archival, aligning with compliance framework.
+Glacier Vault Lock guarantees WORM compliance after objects are transitioned.
+Objects in Glacier cannot be immediately deleted or altered due to Vault Lock policy.
+{{% /notice %}}
