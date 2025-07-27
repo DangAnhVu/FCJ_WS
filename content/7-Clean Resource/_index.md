@@ -29,6 +29,9 @@ pre : " <b> 7. </b> "
 - Empty bucket: 
 ![Delete Bucket](12.png)
 ![Delete Bucket](13.png)
+{{% notice info %}}
+Remember to turn off legal holds on objects and turn on object versioning to delete without errors.
+{{% /notice %}}
 - Delete Bucket:
 ![Delete Bucket](14.png)
 ![Delete Bucket](15.png)
