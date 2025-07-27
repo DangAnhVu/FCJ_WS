@@ -13,6 +13,7 @@ Implement a compliant and automated data archival system using Amazon S3 Glacier
 - Retrieval optimization from S3 Glacier.
 - Generation of audit, cost, and compliance reports.
 - Legal hold mechanisms to preserve data under investigation.
+![AWS Draw](kientruc_aws.png)
 
 #### Overview of Implementation Steps
 1. **Design a compliance framework architecture.**
